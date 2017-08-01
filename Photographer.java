@@ -16,4 +16,8 @@ public class Photographer{
     this.cameras.add( camera );
   }
 
+  public void removeCamera( int position ){
+    this.cameras.remove( position );
+  }
+
 }
