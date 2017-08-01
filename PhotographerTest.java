@@ -34,6 +34,12 @@ public class PhotographerTest{
     assertEquals( 1, jill.countCameras() );
   }
 
-
+  @Test
+  public void printCameraDetails(){
+    jill.addCamera( nikon );
+    jill.addCamera( hasselblad );
+    String expected = "1. SLR Nikon with paparazzi lens 2. Antique bellows Hasselblad ";
+    assertEquals( expected, jill.printCameraDetails() );
+  }
 
 }

@@ -21,10 +21,13 @@ public class Photographer{
   }
 
   public String printCameraDetails(){
-    String concatDetails = ""
+    String concatDetails = "";
+    Integer count = 1;
     for ( Printable camera : this.cameras ) {
-      concatDetails = concatDetails + " , " + camera.printDetails();
+      concatDetails = concatDetails + Integer.toString(count) + ". " + camera.printDetails() + " ";
+      count++;
     }
+    System.out.println(concatDetails);
     return concatDetails;
   }
 
