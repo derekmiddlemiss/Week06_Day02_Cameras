@@ -16,6 +16,10 @@ public class PhotographerTest{
     assertEquals( 0, jill.countCameras() );
   }
 
-
+  @Test
+  public void addCameraToJill(){
+    jill.addCamera( "SLR Nikon with paparazzi lens" );
+    assertEquals( 1, jill.countCameras() );
+  }
 
 }
