@@ -3,9 +3,11 @@ import java.util.*;
 public class Photographer{
 
   private ArrayList<Printable> cameras;
+  private HashMap<String,Integer> journal;
 
   public Photographer(){
     this.cameras = new ArrayList<Printable>();
+    this.journal = new HashMap<String,Integer>();
   } 
 
   public int countCameras(){
@@ -27,8 +29,24 @@ public class Photographer{
       concatDetails = concatDetails + Integer.toString(count) + ". " + camera.printDetails() + " ";
       count++;
     }
-    System.out.println(concatDetails);
+    // System.out.println(concatDetails);
     return concatDetails;
+  }
+
+  public void addToJournal( String day, Integer number ){
+    this.journal.put( day, number);
+  }
+
+  public Integer getFromJournal( String day ){
+    return this.journal.get( day );
+  }
+
+  public Integer numberOfPhotos(){
+    Integer number = 0;
+    for ( Integer value : this.journal.values() ){
+      number = number + value;
+    }
+    return number;
   }
 
 }

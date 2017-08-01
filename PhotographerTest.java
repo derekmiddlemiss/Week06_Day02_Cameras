@@ -42,4 +42,21 @@ public class PhotographerTest{
     assertEquals( expected, jill.printCameraDetails() );
   }
 
+  @Test
+  public void canAddToAndGetFromJournal(){
+    jill.addToJournal( "Monday", 10 );
+    Integer actual = jill.getFromJournal( "Monday" );
+    Integer expected = 10;
+    assertEquals( expected, actual );
+  }
+
+  @Test
+  public void canGetNumberOfPhotos(){
+    jill.addToJournal( "Monday", 10 );
+    jill.addToJournal( "Tuesday", 15 );
+    Integer actual = jill.numberOfPhotos();
+    Integer expected = 25;
+    assertEquals( expected, actual );    
+  }
+
 }
